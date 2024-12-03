@@ -2,15 +2,15 @@ services:
   app:
     build: .
     ports:
-      -"3000:300"
+      - "3000:300"
     volumes:
-      -.:/app 
+      - .:/app 
 
   mailhog:
     image: mailhog/mailhog
     ports:
-      -"1025:1025"
-      -"8025:8025"
+      - "1025:1025"
+      - "8025:8025"
 
   db:
     image: postgres:12
