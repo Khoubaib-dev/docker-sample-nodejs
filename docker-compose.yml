@@ -1,0 +1,20 @@
+services:
+  app:
+    build: .
+    ports:
+      -"3000:300"
+    volumes:
+      -.:/app 
+
+  mailhog:
+    image: mailhog/mailhog
+    ports:
+      -"1025:1025"
+      -"8025:8025"
+
+  db:
+    image: postgres:12
+    environment:
+      postgres_user: postgres
+      postgres_passaword: postgres
+      postgres_db: postgres
